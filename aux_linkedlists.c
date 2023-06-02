@@ -2,38 +2,66 @@
 
 //THE FIRST NODE IS THE FIRST ELEMENT OF THE STACK
 
-node *create_new_node(int content)
+lnk_list *create_new_node(int content)
 {
-    node *node;
+    lnk_list *node;
 
     node = malloc(sizeof(node));
     if(!node)
         return (NULL);
     node->data = content;
     node->next = NULL;
-
     return(node);
 }
 
-void    add_to_stack(node *stack, node *new_node)
-{
-    node *iterador = stack;
-    while(iterador->next != NULL)
-    {
-        iterador= iterador->next;
-    }
+// void    add_to_stack(node *stack, node *new_node)
+// {
+//     node *iterator = stack;
+//     if(!stack)
+//         return;
+//     while(iterator->next != NULL)
+//     {
+//         iterator= iterator->next;
+//     }
 
-    iterador->next = new_node;
+//     iterator->next = new_node;
+// }    
+
+void    add_to_stack(lnk_list **stack, lnk_list *new_node)
+{
+    lnk_list *iterator;
+
+    if(!stack)
+        return ; 
+    if(!*stack)
+        *stack = new_node;
+    else
+    {   iterator= *stack;       
+        while(iterator->next != NULL)
+            iterator = iterator->next;
+        iterator->next = new_node;    
+    }
 }    
 
-void   print_list_data(node *stack)
+void   print_list_data(lnk_list *stack)
 {
-    node *iterador = stack;
+    //node *iterator = stack;
     
-    while(iterador->next != NULL)
+    while(stack->next != NULL)
     {
-        printf("%i\n", iterador->data);
-        iterador = iterador->next;
+        printf("%i\n", stack->data);
+        stack = stack->next;
     }
-    printf("%i\n", iterador->data);
+    printf("%i\n", stack->data);
+}
+
+void    get_last_node(lnk_list **stack)
+{
+    lnk_list *iterator;
+    iterator = *stack;
+    while(stack && iterator ->next)
+    {
+        iterator = iterator->next;
+    }
+    return(iterator);
 }
