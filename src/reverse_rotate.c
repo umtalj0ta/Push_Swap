@@ -24,22 +24,22 @@ void reverse_rotate(lnk_list **stack)
     *stack = last;
 }
 
-void reverse_rotate_a(lnk_list **stacka)
+void ft_rra(lnk_list **stacka)
 {
     reverse_rotate(stacka);
-    ft_putstr_fd("rra\n", 1);
+    ft_printf("rra\n", 1);
 }
 
-void reverse_rotate_b(lnk_list **stackb)
+void ft_rrb(lnk_list **stackb)
 {
     reverse_rotate(stackb);
-    ft_putstr_fd("rrb\n", 1);
+    ft_printf("rrb\n", 1);
 }
 
-void reverse_rotate_ab(lnk_list **stacka, lnk_list **stackb)
+void ft_rrr(lnk_list **stacka, lnk_list **stackb)
 {
     reverse_rotate(stacka);
     reverse_rotate(stackb);
-    ft_putstr_fd("rrr\n", 1);
+    ft_printf("rrr\n", 1);
 }
 

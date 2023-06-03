@@ -8,10 +8,7 @@ OBJ_PATH := obj/
 SRC      := main.c \
             aux_linkedlists.c \
             swap.c \
-            rotate.c \
-			push.c \
-			reverse_rotate.c 
-
+            rotate.c
 
 SRCS     := $(addprefix $(SRC_PATH), $(SRC))
 OBJ      := $(SRC:.c=.o)
@@ -25,7 +22,7 @@ RED      := \033[31m
 GREEN    := \033[32m
 YELLOW   := \033[33m
 
-all: $(OBJ_PATH) $(PRINTF) $(NAME) 
+all: $(OBJ_PATH) $(PRINTF) $(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@$(CC) $(CFLAGS) -c $< -o $@ $(INCS)

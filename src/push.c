@@ -17,13 +17,13 @@ void push_element(lnk_list **stacka, lnk_list **stackb)
     *stackb = tmp;
 }
 
-void push_a(lnk_list **stacka, lnk_list **stackb)
+void ft_pa(lnk_list **stacka, lnk_list **stackb)
 {
     push_element(stackb, stacka);
-    ft_putstr_fd("pa\n", 1);
+    ft_printf("pa\n", 1);
 }
-void push_b(lnk_list **stacka, lnk_list **stackb)
+void ft_pb(lnk_list **stacka, lnk_list **stackb)
 {
     push_element(stacka, stackb);
-    ft_putstr_fd("pb\n", 1);
+    ft_printf("pb\n", 1);
 }

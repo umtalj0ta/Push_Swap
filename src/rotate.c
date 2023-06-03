@@ -27,18 +27,18 @@ void    rotate_elements(lnk_list **stack)
 void	ft_ra(lnk_list **stackA)
 {
 	rotate_elements(stackA);
-	printf("ra\n");
+	ft_printf("ra\n");
 }
 
 void   ft_rb(lnk_list **stackB)
 {
 	rotate_elements(stackB);
-	printf("rb\n");
+	ft_printf("rb\n");
 }
 
 void    ft_rr(lnk_list **stackA, lnk_list **stackB)
 {
 	rotate_elements(stackA);
 	rotate_elements(stackB);
-	printf("rr\n");
+	ft_printf("rr\n");
 }
