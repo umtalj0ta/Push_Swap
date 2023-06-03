@@ -55,7 +55,7 @@ void   print_list_data(lnk_list *stack)
     printf("%i\n", stack->data);
 }
 
-void    get_last_node(lnk_list **stack)
+lnk_list    *get_last_node(lnk_list **stack)
 {
     lnk_list *iterator;
     iterator = *stack;
