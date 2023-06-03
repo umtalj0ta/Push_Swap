@@ -1,13 +1,14 @@
 CC		= gcc
 CFLAGS	= -Wall -Werror -Wextra
 NAME	= push_swap
-
+PRINTF = libftprintf.a
 SRC_PATH = src/
 OBJ_PATH = obj/
 
 SRC		= main.c \
 		aux_linkedlists.c\
 		swap.c \
+		rotate.c \
 
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
@@ -17,19 +18,22 @@ INCS	= -I ./includes/
 all: $(OBJ_PATH) $(NAME) 
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
+	@make -C printf
+	$(CC) $(CFLAGS) -c $< -o $@ $(INCS) 
 
 $(OBJ_PATH):
 	mkdir $(OBJ_PATH)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -I include printf/$(PRINTF) -o $(NAME) 
 
 clean:
+	@make clean -C printf
 	rm -rf $(OBJ_PATH)
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f printf/$(PRINTF)
 
 re: fclean all
 

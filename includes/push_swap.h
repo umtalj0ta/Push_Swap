@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:29:33 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/02 16:40:47 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/06/03 14:47:13 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,7 @@ void    swap_elements(lnk_list *stack);
 void    ft_sa(lnk_list **stackA);
 void    ft_sb(lnk_list **stackB);
 void    ft_ss(lnk_list **stackA, lnk_list **stackB);
+void    rotate_elements(lnk_list **stack);
+void    ft_ra(lnk_list **stackA);
+void    ft_rb(lnk_list **stackB);
+void    ft_rr(lnk_list **stackA, lnk_list **stackB);

@@ -8,14 +8,37 @@ RRR
 
 void    rotate_elements(lnk_list **stack)
 {
- 
-    lnk_list	*tmp;
-	lnk_list	*tmp_last;
-
-	tmp = *stack;
+	lnk_list *iterator;
+	
+	if(!stack)
+		return ;
+	if(!*stack)
+		return ;
+	iterator = *stack;
+	while(iterator->next != NULL)
+	{
+		iterator = iterator->next;
+	}
+	iterator->next = *stack;
 	*stack = (*stack)->next;
-	tmp_last = get_last_node(*stack);
-	tmp->next = NULL;
-	tmp_last->next = tmp;
+	iterator->next->next = NULL;
+}
 
+void	ft_ra(lnk_list **stackA)
+{
+	rotate_elements(stackA);
+	printf("ra\n");
+}
+
+void   ft_rb(lnk_list **stackB)
+{
+	rotate_elements(stackB);
+	printf("rb\n");
+}
+
+void    ft_rr(lnk_list **stackA, lnk_list **stackB)
+{
+	rotate_elements(stackA);
+	rotate_elements(stackB);
+	printf("rr\n");
 }

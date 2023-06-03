@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
             i++;
         }
     }
-    ft_sa(&stackA);
+    ft_ra(&stackA);
     print_list_data(stackA);
 }
 
