@@ -48,8 +48,7 @@ fclean: clean
 	@$(MAKE) -C printf fclean
 	@rm -f $(NAME)
 	@echo "$(RED)Executable '$(NAME)' removed$(RESET)"
-	@rm -f $(ASCII_ART_FILE)
-	@echo "$(RED)ASCII art file removed$(RESET)"
+	
 
 re: fclean all
 
