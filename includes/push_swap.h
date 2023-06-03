@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:29:33 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/03 14:47:13 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/06/03 17:35:32 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,10 @@ void    rotate_elements(lnk_list **stack);
 void    ft_ra(lnk_list **stackA);
 void    ft_rb(lnk_list **stackB);
 void    ft_rr(lnk_list **stackA, lnk_list **stackB);
+void    reverse_rotate(lnk_list **stack);
+void    ft_rra(lnk_list **stackA);
+void    ft_rrb(lnk_list **stackB);
+void    ft_rrr(lnk_list **stackA, lnk_list **stackB);
+void    push_element(lnk_list **stacka, lnk_list **stackb);
+void    ft_pa(lnk_list **stackA, lnk_list **stackB);
+void    ft_pb(lnk_list **stackA, lnk_list **stackB);

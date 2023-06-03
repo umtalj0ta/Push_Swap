@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     lnk_list    *stackA = NULL;
-    //node    *stackB;
+    lnk_list    *stackB = NULL;
 
     if(argc == 1)
     {
@@ -26,7 +26,8 @@ int main(int argc, char *argv[])
             i++;
         }
     }
-    ft_ra(&stackA);
+    ft_pb(&stackA, &stackB);
     print_list_data(stackA);
+    print_list_data(stackB);
 }
 
