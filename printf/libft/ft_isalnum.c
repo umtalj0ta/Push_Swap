@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jgomes-v <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 11:17:49 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/04/12 12:23:27 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/06/12 14:41:51 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_isalnum(int c)
 	return (0);
 }
 
+/*
 int	main(void)
 {
 	int	teste;
@@ -27,3 +28,4 @@ int	main(void)
 	teste = 1;
 	ft_isalnum(teste);
 }
+*/

@@ -1,5 +1,5 @@
 CC       := gcc
-CFLAGS   := -Wall -Werror -Wextra
+CFLAGS   := -Wall -Werror -Wextra -g
 NAME     := push_swap
 PRINTF   := printf/libftprintf.a
 SRC_PATH := src/
@@ -8,7 +8,10 @@ OBJ_PATH := obj/
 SRC      := main.c \
             aux_linkedlists.c \
             swap.c \
-            rotate.c
+            rotate.c \
+			push.c \
+			reverse_rotate.c \
+			error_handling.c \
 
 SRCS     := $(addprefix $(SRC_PATH), $(SRC))
 OBJ      := $(SRC:.c=.o)

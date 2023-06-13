@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:29:33 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/03 17:35:32 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/06/13 13:47:25 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,5 @@ void    ft_rrr(lnk_list **stackA, lnk_list **stackB);
 void    push_element(lnk_list **stacka, lnk_list **stackb);
 void    ft_pa(lnk_list **stackA, lnk_list **stackB);
 void    ft_pb(lnk_list **stackA, lnk_list **stackB);
+int    repeated_number(int* matrix, int nbr, int tamanhoMatrix);
+void  check_sintax(int* matrix, int tamanhoMatrix);

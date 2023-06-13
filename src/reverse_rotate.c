@@ -27,19 +27,19 @@ void reverse_rotate(lnk_list **stack)
 void ft_rra(lnk_list **stacka)
 {
     reverse_rotate(stacka);
-    ft_printf("rra\n", 1);
+    ft_printf("rra\n");
 }
 
 void ft_rrb(lnk_list **stackb)
 {
     reverse_rotate(stackb);
-    ft_printf("rrb\n", 1);
+    ft_printf("rrb\n");
 }
 
 void ft_rrr(lnk_list **stacka, lnk_list **stackb)
 {
     reverse_rotate(stacka);
     reverse_rotate(stackb);
-    ft_printf("rrr\n", 1);
+    ft_printf("rrr\n");
 }
 
