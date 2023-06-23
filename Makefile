@@ -12,6 +12,8 @@ SRC      := main.c \
 			push.c \
 			reverse_rotate.c \
 			error_handling.c \
+			sort.c \
+			sort_aux.c \
 
 SRCS     := $(addprefix $(SRC_PATH), $(SRC))
 OBJ      := $(SRC:.c=.o)

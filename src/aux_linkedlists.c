@@ -27,21 +27,26 @@ lnk_list *create_new_node(int content)
 //     iterator->next = new_node;
 // }    
 
-void    add_to_stack(lnk_list **stack, lnk_list *new_node)
+void add_to_stack(lnk_list **stack, lnk_list *new_node)
 {
     lnk_list *iterator;
 
-    if(!stack)
-        return ; 
-    if(!*stack)
+    if (!stack)
+        return;
+    if (!*stack)
+    {
         *stack = new_node;
-    else
-    {   iterator= *stack;       
-        while(iterator->next != NULL)
-            iterator = iterator->next;
-        iterator->next = new_node;    
+        new_node->prev = NULL;
     }
-}    
+    else
+    {
+        iterator = *stack;
+        while (iterator->next != NULL)
+            iterator = iterator->next;
+        iterator->next = new_node;
+        new_node->prev = iterator;
+    }
+}   
 
 void   print_list_data(lnk_list *stack)
 {

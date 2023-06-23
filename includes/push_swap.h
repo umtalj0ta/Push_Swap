@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:29:33 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/13 13:47:25 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/06/23 10:39:53 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,17 @@ typedef struct s_list
 {
     int data;
     struct s_list *next;
+    struct s_list *prev;
 } lnk_list ;
+
+//adicionar index
+// target node 
+// posicao na metade
+// preco 
+// bool cheapeast
+// prev 
+// index final 
+
 
 lnk_list * create_new_node(int content);
 void   print_list_data(lnk_list *stack);
@@ -42,3 +52,9 @@ void    ft_pa(lnk_list **stackA, lnk_list **stackB);
 void    ft_pb(lnk_list **stackA, lnk_list **stackB);
 int    repeated_number(int* matrix, int nbr, int tamanhoMatrix);
 void  check_sintax(int* matrix, int tamanhoMatrix);
+lnk_list *find_biggest(lnk_list *stack);
+lnk_list *find_second_biggest(lnk_list *stack) ;
+lnk_list *find_smallest(lnk_list *stack);
+void    *sort_three(lnk_list **stack);
+void sort_five(lnk_list **stackA, lnk_list **stackB);
+int is_sorted(lnk_list *stack);

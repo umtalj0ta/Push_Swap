@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:24:53 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/13 14:22:19 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/06/23 10:42:32 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@
     return 0;   
 }
 
-int swap_init(int argc, char *argv[])
+lnk_list *swap_init(int argc, char *argv[])
 {
-    lnk_list    *stackA = NULL;
+    lnk_list* stackA = NULL;
     //lnk_list    *stackB = NULL;
     char**      argument_count2;
     int conversion;
@@ -106,16 +106,21 @@ int swap_init(int argc, char *argv[])
         }
     }
     //ft_rra(&stackA);
-    print_list_data(stackA);
     //ft_printf("\n");
     //print_list_data(stackB);
-    return 1;
+    return stackA;
 }
 
 int main(int argc, char *argv[])
 {
-    
+    lnk_list *teste;
     error_handling(argv,argc);
-    swap_init(argc, argv);
+    lnk_list * stackA = swap_init(argc, argv);
+    //lnk_list *stackB = swap_init(0,0);
+    //sort_five(&stackA, &stackB);
+    print_list_data(stackA);
+    
+    
+    return 0;
 }
 
