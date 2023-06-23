@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:24:53 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/23 15:18:47 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/06/23 16:47:02 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,7 @@ int main(int argc, char *argv[])
     push_swap(&stackA, &stackB, stack_size);
     print_list_data(stackA);
     free_stack(&stackA);
+    free_stack(&stackB);
     
     
     return 0;
