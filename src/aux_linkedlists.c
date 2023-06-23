@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   aux_linkedlists.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/23 16:44:33 by jgomes-v          #+#    #+#             */
+/*   Updated: 2023/06/23 16:44:34 by jgomes-v         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 //THE FIRST NODE IS THE FIRST ELEMENT OF THE STACK
@@ -21,7 +33,6 @@ lnk_list *create_new_node(int content)
 
 void   print_list_index(lnk_list *stack)
 {
-    //node *iterator = stack;
     
     while(stack->next != NULL)
     {
