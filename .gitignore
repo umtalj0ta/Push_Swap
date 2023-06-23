@@ -1,2 +1,4 @@
 .out
 main.dSYM: file format Mach-O 64-bit x86-64
+push_swap
+.o
