@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:03 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/23 16:45:04 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/06/23 16:50:09 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,23 +52,6 @@ int	get_lowest_index_position(lnk_list **stack)
 	}
 	return (lowest_pos);
 }
-
-/* find_highest_index:
-*	Returns the highest index in a stack.
-*/
-// static int	find_highest_index(lnk_list *stack)
-// {
-// 	int		index;
-
-// 	index = stack->index;
-// 	while (stack)
-// 	{
-// 		if (stack->index > index)
-// 			index = stack->index;
-// 		stack = stack->next;
-// 	}
-// 	return (index);
-// }
 
 static int	get_target(lnk_list **a, int b_idx,
 								int target_idx, int target_pos)
