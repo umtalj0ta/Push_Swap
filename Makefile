@@ -16,7 +16,7 @@ SRC      := main.c \
 			sort_aux.c \
 			stack.c \
 			position.c \
-			do_move.c \
+			move_cost.c \
 			cost.c \
 			utils.c \
 			
