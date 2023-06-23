@@ -1,7 +1,6 @@
 #include "push_swap.h"
 
 // TO DO
-// caracters em vez de int
 // verificar max int e min int
 //terminar 
 

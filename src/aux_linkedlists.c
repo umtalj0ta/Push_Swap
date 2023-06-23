@@ -6,55 +6,26 @@ lnk_list *create_new_node(int content)
 {
     lnk_list *node;
 
-    node = malloc(sizeof(node));
+    node = malloc(sizeof(lnk_list));
     if(!node)
         return (NULL);
     node->data = content;
-    node->next = NULL;
+    node->index = 0;
+	node->position = -1;
+	node->target_position = -1;
+	node->cost_a = -1;
+	node->cost_b = -1;
+	node->next = NULL;
     return(node);
 }
 
-// void    add_to_stack(node *stack, node *new_node)
-// {
-//     node *iterator = stack;
-//     if(!stack)
-//         return;
-//     while(iterator->next != NULL)
-//     {
-//         iterator= iterator->next;
-//     }
-
-//     iterator->next = new_node;
-// }    
-
-void add_to_stack(lnk_list **stack, lnk_list *new_node)
-{
-    lnk_list *iterator;
-
-    if (!stack)
-        return;
-    if (!*stack)
-    {
-        *stack = new_node;
-        new_node->prev = NULL;
-    }
-    else
-    {
-        iterator = *stack;
-        while (iterator->next != NULL)
-            iterator = iterator->next;
-        iterator->next = new_node;
-        new_node->prev = iterator;
-    }
-}   
-
-void   print_list_data(lnk_list *stack)
+void   print_list_index(lnk_list *stack)
 {
     //node *iterator = stack;
     
     while(stack->next != NULL)
     {
-        printf("%i\n", stack->data);
+        printf("%i\n", stack->index);
         stack = stack->next;
     }
     printf("%i\n", stack->data);
@@ -69,4 +40,19 @@ lnk_list    *get_last_node(lnk_list **stack)
         iterator = iterator->next;
     }
     return(iterator);
+}
+
+void	free_stack(lnk_list **stack)
+{
+	lnk_list	*tmp;
+
+	if (!stack || !(*stack))
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	*stack = NULL;
 }

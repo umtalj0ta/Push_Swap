@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:24:53 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/23 10:42:32 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/06/23 15:18:47 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 //THE FIRST NODE ON THE LIST IS THE FIRST ELEMENT OF THE STACK
  int    error_handling(char **argv, int argc)
 {
-    char** matrix;
+   char** matrix;
     int i;
     int nbr;
-    int* matrix_int;
+   int* matrix_int;
     
     i = 0;
     nbr = 0;
     // Determinar tamanho matriz. 
-    if(argc == 1)
+    if(argc < 2)
     {
+        printf("You should do like ./push_swap <2 4 5 6 7>");
         exit(1);
     }
     if(argc == 2 && !argv[1][0])
@@ -58,7 +59,7 @@
             i++;
         } 
     }
-    if (argc > 2)
+    if (argc >= 2)
     {
         while(argv[i])
         {
@@ -82,7 +83,7 @@ lnk_list *swap_init(int argc, char *argv[])
     {
         int k;
 
-        k = 0;
+        k = 1;
         argument_count2 = ft_split(argv[1], ' ');
         while(argument_count2[k] != NULL)
         {
@@ -92,7 +93,7 @@ lnk_list *swap_init(int argc, char *argv[])
             k++;
         }
     }
-    if(argc > 2)
+    if(argc >= 2)
     {
         int i;
 
@@ -111,14 +112,28 @@ lnk_list *swap_init(int argc, char *argv[])
     return stackA;
 }
 
+static void	push_swap(lnk_list **stack_a, lnk_list **stack_b, int stack_size)
+{
+	if (stack_size == 2 && !is_sorted(*stack_a))
+		ft_sa(stack_a);
+	else if (stack_size == 3)
+		sort_three(stack_a);
+	else if (stack_size > 3 && !is_sorted(*stack_a))
+		sort(stack_a, stack_b);
+}
+
 int main(int argc, char *argv[])
 {
-    lnk_list *teste;
+    int stack_size;
+    
     error_handling(argv,argc);
     lnk_list * stackA = swap_init(argc, argv);
-    //lnk_list *stackB = swap_init(0,0);
-    //sort_five(&stackA, &stackB);
+    lnk_list *stackB = swap_init(0,0);
+    stack_size = get_stack_size(stackA);
+    assign_index(stackA, stack_size + 1);
+    push_swap(&stackA, &stackB, stack_size);
     print_list_data(stackA);
+    free_stack(&stackA);
     
     
     return 0;

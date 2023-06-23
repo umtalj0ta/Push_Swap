@@ -14,6 +14,12 @@ SRC      := main.c \
 			error_handling.c \
 			sort.c \
 			sort_aux.c \
+			stack.c \
+			position.c \
+			do_move.c \
+			cost.c \
+			utils.c \
+			
 
 SRCS     := $(addprefix $(SRC_PATH), $(SRC))
 OBJ      := $(SRC:.c=.o)
