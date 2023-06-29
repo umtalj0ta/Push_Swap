@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:24:53 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/23 16:47:02 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:52:27 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@
             repeated_number(matrix_int, matrix_int[i], tamanhoMatriz);
             check_sintax(matrix_int, tamanhoMatriz);
             i++;
-        } 
+        }
+        
     }
     if (argc >= 2)
     {
@@ -65,7 +66,7 @@
         {
             nbr = ft_atoi(argv[i]);
              repeated_number((int*) argv, nbr, argc - 1);
-             //check_sintax(argv, tamanhoMatriz);
+             //check_sintax(argv, argv[i]);
             i++;
         }
     }
@@ -127,16 +128,16 @@ int main(int argc, char *argv[])
     int stack_size;
     
     error_handling(argv,argc);
-    lnk_list * stackA = swap_init(argc, argv);
+    lnk_list *stackA = swap_init(argc, argv);
     lnk_list *stackB = swap_init(0,0);
     stack_size = get_stack_size(stackA);
     assign_index(stackA, stack_size + 1);
     push_swap(&stackA, &stackB, stack_size);
+
     print_list_data(stackA);
     free_stack(&stackA);
     free_stack(&stackB);
-    
-    
+
     return 0;
 }
 

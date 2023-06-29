@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 15:00:39 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/23 15:22:36 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:23:31 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void *sort_three(lnk_list **stack)
         ft_ra(stack);
     if (biggest == (*stack)->next)
         ft_rra(stack);
-
     if ((*stack)->data > (*stack)->next->data)
         ft_sa(stack);
 
