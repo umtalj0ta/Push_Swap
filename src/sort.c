@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 15:00:39 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/28 14:23:31 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/04 15:44:24 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,12 @@ static void	push_all_save_three(lnk_list **stack_a, lnk_list **stack_b)
 			ft_ra(stack_a);
 		i++;
 	}
-	while (stack_size - pushed > 3)
+	while (stack_size - pushed > 2)
 	{
 		ft_pb(stack_a, stack_b);
 		pushed++;
 	}
+	
 }
 
 /* shiflnk_list:
@@ -102,7 +103,11 @@ static void	shiflnk_list(lnk_list **stack_a)
 void	sort(lnk_list **stack_a, lnk_list **stack_b)
 {
 	push_all_save_three(stack_a, stack_b);
-	sort_three(stack_a);
+	/* if (!is_sorted(*stack_a))
+		ft_sa(stack_a); */
+	// sort_three(stack_a);
+	// if(!is_sorted(*stack_a))
+	// 	sort_three(stack_a);
 	while (*stack_b)
 	{
 		get_target_position(stack_a, stack_b);

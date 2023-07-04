@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:44:48 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/23 16:49:38 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/04 15:05:55 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,18 @@ static void	do_rotate_both(lnk_list **a, lnk_list **b, int *cost_a, int *cost_b)
 */
 static void	do_rotate_a(lnk_list **a, int *cost)
 {
-	while (*cost)
+
+	if (*cost > 0)
 	{
-		if (*cost > 0)
+		while (*cost > 0)
 		{
 			ft_ra(a);
 			(*cost)--;
 		}
-		else if (*cost < 0)
+	}
+	else if (*cost < 0)
+	{
+		while (*cost < 0)
 		{
 			ft_rra(a);
 			(*cost)++;
@@ -69,14 +73,17 @@ static void	do_rotate_a(lnk_list **a, int *cost)
 */
 static void	do_rotate_b(lnk_list **b, int *cost)
 {
-	while (*cost)
+	if (*cost > 0)
 	{
-		if (*cost > 0)
+		while (*cost > 0)
 		{
 			ft_rb(b);
 			(*cost)--;
 		}
-		else if (*cost < 0)
+	}
+	else if (*cost < 0)
+	{
+		while (*cost < 0)
 		{
 			ft_rrb(b);
 			(*cost)++;
@@ -89,7 +96,7 @@ void	do_move(lnk_list **a, lnk_list **b, int cost_a, int cost_b)
 	if (cost_a < 0 && cost_b < 0)
 		do_rev_rotate_both(a, b, &cost_a, &cost_b);
 	else if (cost_a > 0 && cost_b > 0)
-		do_rotate_both(a, b, &cost_a, &cost_b);
+		do_rotate_both(a, b, &cost_a, &cost_b);	
 	do_rotate_a(a, &cost_a);
 	do_rotate_b(b, &cost_b);
 	ft_pa(a, b);
