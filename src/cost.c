@@ -6,21 +6,12 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:44:42 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 13:43:22 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:48:48 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* get_cost:
-
-Calcula o custo de mover cada elemento da pilha B para a posição correta na pilha A.
-Dois custos são calculados:
-cost_b representa o custo de levar o elemento até o topo da pilha B
-cost_a representa o custo de chegar à posição correta na pilha A.
-Se o elemento estiver na metade inferior da pilha, o custo será negativo,
-se estiver na metade superior, o custo é positivo.
-*/
 void	get_cost(lnk_list **stack_a, lnk_list **stack_b)
 {
 	lnk_list	*tmp_a;
@@ -44,16 +35,12 @@ void	get_cost(lnk_list **stack_a, lnk_list **stack_b)
 	}
 }
 
-/* do_cheapest_move:
- *	Encontra elemento na stack B mais barato para dar push para a stack A
- *	e move -o para a posicao correcta na stack A
- */
 void	do_cheapest_move(lnk_list **stack_a, lnk_list **stack_b)
 {
-	lnk_list *tmp;
-	int cheapest;
-	int cost_a;
-	int cost_b;
+	lnk_list	*tmp;
+	int			cheapest;
+	int			cost_a;
+	int			cost_b;
 
 	tmp = *stack_b;
 	cheapest = INT_MAX;

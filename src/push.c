@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:09 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 13:46:39 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:29:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ft_pa(lnk_list **stacka, lnk_list **stackb)
 	push_element(stackb, stacka);
 	ft_printf("pa\n");
 }
+
 void	ft_pb(lnk_list **stacka, lnk_list **stackb)
 {
 	push_element(stacka, stackb);

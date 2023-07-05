@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 15:00:39 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 16:23:05 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:30:33 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,6 @@ void	reorder_based_on_lowest(lnk_list **stack_a)
 void	sort(lnk_list **stack_a, lnk_list **stack_b)
 {
 	push_all_save_two(stack_a, stack_b);
-	/* if (!is_sorted(*stack_a))
-		ft_sa(stack_a); */
-	// sort_three(stack_a);
-	// if(!is_sorted(*stack_a))
-	// 	sort_three(stack_a);
 	while (*stack_b)
 	{
 		get_target_position(stack_a, stack_b);

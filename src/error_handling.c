@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:44:55 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 16:24:05 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:29:41 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
 
 int	check_repeated(char **arg)
 {
@@ -68,19 +67,20 @@ char	*remove_leading_zeros(char *s)
 
 int	is_valid_number(char *s)
 {
-    int i;
+	int	i;
 
-    i = 0;
+	i = 0;
 	if (s[i] == '+' || s[i] == '-')
 		i++;
 	while (s[i] >= '0' && s[i] <= '9')
 		i++;
 	if (s[i] && !(s[i] >= '0' && s[i] <= '9'))
 		return (0);
-	if (!s[i] && ((s[i - 1] == '+' || (s[i - 1]== '-'))))
+	if (!s[i] && ((s[i - 1] == '+' || (s[i - 1] == '-'))))
 		return (0);
 	return (1);
 }
+
 int	is_correct_input(char **arg)
 {
 	int	i;
@@ -99,20 +99,21 @@ int	is_correct_input(char **arg)
 	return (1);
 }
 
-int check_integer_range(char **argv, int argc)
+int	check_integer_range(char **argv, int argc)
 {
-    long num;
-    int i = 1;
-    while (i < argc)
-    {
-        num = ft_atol(argv[i]); 
+	long	num;
+	int		i;
 
-        if (num < INT_MIN || num > INT_MAX)
-        {
-            ft_putstr_fd("Error\n", 2);
-            exit(1);
-        }
-        i++;
-    }
-    return 1; 
+	i = 1;
+	while (i < argc)
+	{
+		num = ft_atol(argv[i]);
+		if (num < INT_MIN || num > INT_MAX)
+		{
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
+		}
+		i++;
+	}
+	return (1);
 }

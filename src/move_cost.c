@@ -6,23 +6,13 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:44:48 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 13:44:26 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:47:48 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* do_rev_rotate_both:
-
-Roda ambos os stacks A e B em sentido anti-horário até que um deles esteja na posição correta.
-O custo fornecido é negativo,
-	uma vez que ambas as posições estão na metade inferior
-de seus respectivos stacks. O custo é aumentado à medida que os stacks são
-rodados, quando um deles atinge 0, o stack foi rodado o máximo possível
-e a posição superior está correta.
-*/
-void	do_rev_rotate_both(lnk_list **a, lnk_list **b, int *cost_a,
-		int *cost_b)
+void	do_rev_rotate_both(lnk_list **a, lnk_list **b, int *cost_a, int *cost_b)
 {
 	while (*cost_a < 0 && *cost_b < 0)
 	{

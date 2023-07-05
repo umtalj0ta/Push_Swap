@@ -6,13 +6,12 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:03 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 13:46:33 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:38:00 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// assign a position to each node of the list in ascending order (do not confuse with index)
 void	get_position(lnk_list **stack)
 {
 	lnk_list	*tmp;
@@ -80,10 +79,6 @@ int	get_target(lnk_list **a, int b_idx, int target_idx, int target_pos)
 	return (target_pos);
 }
 
-/* get_target_position:
-
-		*	da target na stack A da posicao correcta depois sera usado para calcular o custo
- */
 void	get_target_position(lnk_list **a, lnk_list **b)
 {
 	lnk_list	*tmp_b;

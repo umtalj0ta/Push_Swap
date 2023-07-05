@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:41 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 16:24:28 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:38:10 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,16 @@ void	print_list_data(lnk_list *stack)
 
 long int	ft_atol(char *npr)
 {
-	long int res;
-	int signal;
-	int i;
-	
+	long int	res;
+	int			signal;
+	int			i;
+
 	i = 0;
 	signal = 1;
 	res = 0;
-	while (npr[i] == ' ' || npr[i] == '\t'
-		|| npr[i] == '\n'
-		|| npr[i] == '\r' || npr[i] == '\v' || npr[i] == '\f')
-	i++;
+	while (npr[i] == ' ' || npr[i] == '\t' || npr[i] == '\n' || npr[i] == '\r'
+		|| npr[i] == '\v' || npr[i] == '\f')
+		i++;
 	if (npr[i] == '\0')
 		return (0);
 	if (npr[i] == '-')

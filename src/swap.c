@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:37 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 13:47:07 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:45:17 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	swap_elements(lnk_list *stack)
 	stack->data = stack->next->data;
 	stack->next->data = tmp;
 }
+
 void	ft_sa(lnk_list **stackA)
 {
 	swap_elements(*stackA);
