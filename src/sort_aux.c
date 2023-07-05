@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 17:15:24 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 13:46:54 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 16:23:27 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,18 @@ int	is_sorted(lnk_list *stack)
 
 	if (stack == NULL || stack->next == NULL)
 	{
-		return (1); // Empty list or single element, considered sorted
+		return (1); 
 	}
 	current = stack;
 	while (current->next != NULL)
 	{
 		if (current->data > current->next->data)
 		{
-			return (0); // Found out-of-order elements
+			return (0); 
 		}
 		current = current->next;
 	}
-	return (1); // All elements are in ascending order
+	return (1); 
 }
 
 lnk_list	*find_smallest(lnk_list *stack)

@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 15:00:39 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 15:40:39 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 16:23:05 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,7 @@ void	*sort_three(lnk_list **stack)
 	return (*stack);
 }
 
-/* push_all_save_three:
- *	Pushes all the elements of stack a into stack b, except the three last ones.
- *	Pushes the smaller values first, and then the larger values to help with
- *	sorting efficiency.
- */
-void	push_all_save_three(lnk_list **stack_a, lnk_list **stack_b)
+void	push_all_save_two(lnk_list **stack_a, lnk_list **stack_b)
 {
 	int	stack_size;
 	int	pushed;
@@ -60,13 +55,7 @@ void	push_all_save_three(lnk_list **stack_a, lnk_list **stack_b)
 	}
 }
 
-/* shiflnk_list:
- *	After the bulk of the stack is sorted, shifts stack a until the lowest
- *	value is at the top. If it is in the bottom half of the stack, reverse
- *	rotate it into position, otherwise rotate until it is at the top of the
- *	stack.
- */
-void	shiflnk_list(lnk_list **stack_a)
+void	reorder_based_on_lowest(lnk_list **stack_a)
 {
 	int	lowest_pos;
 	int	stack_size;
@@ -91,16 +80,9 @@ void	shiflnk_list(lnk_list **stack_a)
 	}
 }
 
-/* sort:
- *	Sorting algorithm for a stack larger than 3.
- *		Push everything but 3 numbers to stack B.
- *		Sort the 3 numbers left in stack A.
- *		Calculate the most cost-effective move.
- *		Shift elements until stack A is in order.
- */
 void	sort(lnk_list **stack_a, lnk_list **stack_b)
 {
-	push_all_save_three(stack_a, stack_b);
+	push_all_save_two(stack_a, stack_b);
 	/* if (!is_sorted(*stack_a))
 		ft_sa(stack_a); */
 	// sort_three(stack_a);
@@ -113,5 +95,5 @@ void	sort(lnk_list **stack_a, lnk_list **stack_b)
 		do_cheapest_move(stack_a, stack_b);
 	}
 	if (!is_sorted(*stack_a))
-		shiflnk_list(stack_a);
+		reorder_based_on_lowest(stack_a);
 }

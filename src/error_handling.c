@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:44:55 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 16:08:25 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 16:24:05 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <unistd.h>
 
 
-int	is_repeated(char **arg)
+int	check_repeated(char **arg)
 {
 	int	i;
 	int	j;
@@ -38,23 +38,7 @@ int	is_repeated(char **arg)
 	return (0);
 }
 
-int	is_valid_number(char *s)
-{
-    int i;
-
-    i = 0;
-	if (s[i] == '+' || s[i] == '-')
-		i++;
-	while (s[i] >= '0' && s[i] <= '9')
-		i++;
-	if (s[i] && !(s[i] >= '0' && s[i] <= '9'))
-		return (0);
-	if (!s[i] && ((s[i - 1] == '+' || (s[i - 1]== '-'))))
-		return (0);
-	return (1);
-}
-
-char	*remove_extra_zeros(char *s)
+char	*remove_leading_zeros(char *s)
 {
 	int	i;
 	int	j;
@@ -82,6 +66,21 @@ char	*remove_extra_zeros(char *s)
 	}
 }
 
+int	is_valid_number(char *s)
+{
+    int i;
+
+    i = 0;
+	if (s[i] == '+' || s[i] == '-')
+		i++;
+	while (s[i] >= '0' && s[i] <= '9')
+		i++;
+	if (s[i] && !(s[i] >= '0' && s[i] <= '9'))
+		return (0);
+	if (!s[i] && ((s[i - 1] == '+' || (s[i - 1]== '-'))))
+		return (0);
+	return (1);
+}
 int	is_correct_input(char **arg)
 {
 	int	i;
@@ -92,10 +91,10 @@ int	is_correct_input(char **arg)
 		if (!is_valid_number(arg[i]))
 			return (0);
 		if (arg[i][0] == '0' || arg[i][1] == '0')
-			arg[i] = remove_extra_zeros(arg[i]);
+			arg[i] = remove_leading_zeros(arg[i]);
 		i++;
 	}
-	if (is_repeated(arg) || !arg[1][0])
+	if (check_repeated(arg) || !arg[1][0])
 		return (0);
 	return (1);
 }
