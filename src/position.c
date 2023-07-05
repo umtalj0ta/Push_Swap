@@ -6,18 +6,17 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:03 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/04 15:24:33 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 13:46:33 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
-//assign a position to each node of the list in ascending order (do not confuse with index)
-static void	get_position(lnk_list **stack)
+// assign a position to each node of the list in ascending order (do not confuse with index)
+void	get_position(lnk_list **stack)
 {
 	lnk_list	*tmp;
-	int		i;
+	int			i;
 
 	tmp = *stack;
 	i = 0;
@@ -29,13 +28,12 @@ static void	get_position(lnk_list **stack)
 	}
 }
 
-
-//retorna a posicao do menor index na stack
+// retorna a posicao do menor index na stack
 int	get_lowest_index_position(lnk_list **stack)
 {
 	lnk_list	*tmp;
-	int		lowest_index;
-	int		lowest_pos;
+	int			lowest_index;
+	int			lowest_pos;
 
 	tmp = *stack;
 	lowest_index = INT_MAX;
@@ -53,8 +51,7 @@ int	get_lowest_index_position(lnk_list **stack)
 	return (lowest_pos);
 }
 
-static int	get_target(lnk_list **a, int b_idx,
-								int target_idx, int target_pos)
+int	get_target(lnk_list **a, int b_idx, int target_idx, int target_pos)
 {
 	lnk_list	*tmp_a;
 
@@ -84,12 +81,13 @@ static int	get_target(lnk_list **a, int b_idx,
 }
 
 /* get_target_position:
-*	da target na stack A da posicao correcta depois sera usado para calcular o custo
-*/
+
+		*	da target na stack A da posicao correcta depois sera usado para calcular o custo
+ */
 void	get_target_position(lnk_list **a, lnk_list **b)
 {
 	lnk_list	*tmp_b;
-	int		target_pos;
+	int			target_pos;
 
 	tmp_b = *b;
 	get_position(a);
@@ -102,5 +100,3 @@ void	get_target_position(lnk_list **a, lnk_list **b)
 		tmp_b = tmp_b->next;
 	}
 }
-
-

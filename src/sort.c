@@ -6,35 +6,34 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 15:00:39 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/04 15:44:24 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 15:40:39 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void *sort_three(lnk_list **stack)
+void	*sort_three(lnk_list **stack)
 {
-    if (is_sorted(*stack) == 1)
-        return *stack;
+	lnk_list	*biggest;
 
-    lnk_list *biggest = find_biggest(*stack);
-
-    if (biggest == *stack)
-        ft_ra(stack);
-    if (biggest == (*stack)->next)
-        ft_rra(stack);
-    if ((*stack)->data > (*stack)->next->data)
-        ft_sa(stack);
-
-    return *stack;
+	if (is_sorted(*stack) == 1)
+		return (*stack);
+	biggest = find_biggest(*stack);
+	if (biggest == *stack)
+		ft_ra(stack);
+	if (biggest == (*stack)->next)
+		ft_rra(stack);
+	if ((*stack)->data > (*stack)->next->data)
+		ft_sa(stack);
+	return (*stack);
 }
 
 /* push_all_save_three:
-*	Pushes all the elements of stack a into stack b, except the three last ones.
-*	Pushes the smaller values first, and then the larger values to help with
-*	sorting efficiency.
-*/
-static void	push_all_save_three(lnk_list **stack_a, lnk_list **stack_b)
+ *	Pushes all the elements of stack a into stack b, except the three last ones.
+ *	Pushes the smaller values first, and then the larger values to help with
+ *	sorting efficiency.
+ */
+void	push_all_save_three(lnk_list **stack_a, lnk_list **stack_b)
 {
 	int	stack_size;
 	int	pushed;
@@ -59,16 +58,15 @@ static void	push_all_save_three(lnk_list **stack_a, lnk_list **stack_b)
 		ft_pb(stack_a, stack_b);
 		pushed++;
 	}
-	
 }
 
 /* shiflnk_list:
-*	After the bulk of the stack is sorted, shifts stack a until the lowest
-*	value is at the top. If it is in the bottom half of the stack, reverse
-*	rotate it into position, otherwise rotate until it is at the top of the
-*	stack.
-*/
-static void	shiflnk_list(lnk_list **stack_a)
+ *	After the bulk of the stack is sorted, shifts stack a until the lowest
+ *	value is at the top. If it is in the bottom half of the stack, reverse
+ *	rotate it into position, otherwise rotate until it is at the top of the
+ *	stack.
+ */
+void	shiflnk_list(lnk_list **stack_a)
 {
 	int	lowest_pos;
 	int	stack_size;
@@ -94,12 +92,12 @@ static void	shiflnk_list(lnk_list **stack_a)
 }
 
 /* sort:
-*	Sorting algorithm for a stack larger than 3.
-*		Push everything but 3 numbers to stack B.
-*		Sort the 3 numbers left in stack A.
-*		Calculate the most cost-effective move.
-*		Shift elements until stack A is in order.
-*/
+ *	Sorting algorithm for a stack larger than 3.
+ *		Push everything but 3 numbers to stack B.
+ *		Sort the 3 numbers left in stack A.
+ *		Calculate the most cost-effective move.
+ *		Shift elements until stack A is in order.
+ */
 void	sort(lnk_list **stack_a, lnk_list **stack_b)
 {
 	push_all_save_three(stack_a, stack_b);

@@ -6,11 +6,9 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:44:42 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/23 16:44:43 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 13:43:22 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "push_swap.h"
 
@@ -27,8 +25,8 @@ void	get_cost(lnk_list **stack_a, lnk_list **stack_b)
 {
 	lnk_list	*tmp_a;
 	lnk_list	*tmp_b;
-	int		size_a;
-	int		size_b;
+	int			size_a;
+	int			size_b;
 
 	tmp_a = *stack_a;
 	tmp_b = *stack_b;
@@ -47,15 +45,15 @@ void	get_cost(lnk_list **stack_a, lnk_list **stack_b)
 }
 
 /* do_cheapest_move:
-*	Encontra elemento na stack B mais barato para dar push para a stack A
-*	e move -o para a posicao correcta na stack A
-*/
+ *	Encontra elemento na stack B mais barato para dar push para a stack A
+ *	e move -o para a posicao correcta na stack A
+ */
 void	do_cheapest_move(lnk_list **stack_a, lnk_list **stack_b)
 {
-	lnk_list	*tmp;
-	int		cheapest;
-	int		cost_a;
-	int		cost_b;
+	lnk_list *tmp;
+	int cheapest;
+	int cost_a;
+	int cost_b;
 
 	tmp = *stack_b;
 	cheapest = INT_MAX;

@@ -6,11 +6,11 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:32 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/06/23 16:45:34 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/05 13:47:02 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//TO DO
+// TO DO
 // STACK SIZE
 
 #include "push_swap.h"
@@ -20,7 +20,7 @@ void	assign_index(lnk_list *stacka, int stack_size)
 {
 	lnk_list	*ptr;
 	lnk_list	*highest;
-	int		value;
+	int			value;
 
 	while (--stack_size > 0)
 	{
@@ -45,28 +45,28 @@ void	assign_index(lnk_list *stacka, int stack_size)
 	}
 }
 
-void add_to_stack(lnk_list **stack, lnk_list *new_node)
+void	add_to_stack(lnk_list **stack, lnk_list *new_node)
 {
-    lnk_list *iterator;
+	lnk_list	*iterator;
 
-    if (!stack)
-        return;
-    if (!*stack)
-    {
-        *stack = new_node;
-        new_node->prev = NULL;
-    }
-    else
-    {
-        iterator = *stack;
-        while (iterator->next != NULL)
-            iterator = iterator->next;
-        iterator->next = new_node;
-        new_node->prev = iterator;
-    }
+	if (!stack)
+		return ;
+	if (!*stack)
+	{
+		*stack = new_node;
+		new_node->prev = NULL;
+	}
+	else
+	{
+		iterator = *stack;
+		while (iterator->next != NULL)
+			iterator = iterator->next;
+		iterator->next = new_node;
+		new_node->prev = iterator;
+	}
 }
 
-int	get_stack_size(lnk_list	*stack)
+int	get_stack_size(lnk_list *stack)
 {
 	int	size;
 
