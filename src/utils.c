@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:41 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 20:38:10 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:04:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	nb_abs(int nb)
 	return (nb);
 }
 
-void	print_list_data(lnk_list *stack)
+void	print_list_data(t_list *stack)
 {
 	while (stack != NULL)
 	{

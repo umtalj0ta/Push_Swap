@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:37 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 20:45:17 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:04:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ SB
 SSS*/
 
 /* THIS FUNCTION SWAPS THE TWO TOP ELEMMETTS */
-void	swap_elements(lnk_list *stack)
+void	swap_elements(t_list *stack)
 {
 	int	tmp;
 
@@ -30,19 +30,19 @@ void	swap_elements(lnk_list *stack)
 	stack->next->data = tmp;
 }
 
-void	ft_sa(lnk_list **stackA)
+void	ft_sa(t_list **stackA)
 {
 	swap_elements(*stackA);
 	ft_printf("sa\n");
 }
 
-void	ft_sb(lnk_list **stackB)
+void	ft_sb(t_list **stackB)
 {
 	swap_elements(*stackB);
 	ft_printf("sb\n");
 }
 
-void	ft_ss(lnk_list **stackA, lnk_list **stackB)
+void	ft_ss(t_list **stackA, t_list **stackB)
 {
 	swap_elements(*stackA);
 	swap_elements(*stackB);

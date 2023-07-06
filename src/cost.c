@@ -6,18 +6,18 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:44:42 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 20:48:48 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:04:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	get_cost(lnk_list **stack_a, lnk_list **stack_b)
+void	get_cost(t_list **stack_a, t_list **stack_b)
 {
-	lnk_list	*tmp_a;
-	lnk_list	*tmp_b;
-	int			size_a;
-	int			size_b;
+	t_list	*tmp_a;
+	t_list	*tmp_b;
+	int		size_a;
+	int		size_b;
 
 	tmp_a = *stack_a;
 	tmp_b = *stack_b;
@@ -35,12 +35,12 @@ void	get_cost(lnk_list **stack_a, lnk_list **stack_b)
 	}
 }
 
-void	do_cheapest_move(lnk_list **stack_a, lnk_list **stack_b)
+void	do_cheapest_move(t_list **stack_a, t_list **stack_b)
 {
-	lnk_list	*tmp;
-	int			cheapest;
-	int			cost_a;
-	int			cost_b;
+	t_list	*tmp;
+	int		cheapest;
+	int		cost_a;
+	int		cost_b;
 
 	tmp = *stack_b;
 	cheapest = INT_MAX;

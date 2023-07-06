@@ -1,4 +1,4 @@
-CC       := gcc
+CC       := cc
 CFLAGS   := -Wall -Werror -Wextra -g
 NAME     := push_swap
 PRINTF   := printf/libftprintf.a

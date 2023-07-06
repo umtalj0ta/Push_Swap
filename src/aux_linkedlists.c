@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:44:33 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 20:42:41 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:26:05 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 // THE FIRST NODE IS THE FIRST ELEMENT OF THE STACK
 
-lnk_list	*create_new_node(int content)
+t_list	*create_new_node(int content)
 {
-	lnk_list	*node;
+	t_list	*node;
 
 	node = malloc(sizeof * node);
 	if (!node)
@@ -31,7 +31,7 @@ lnk_list	*create_new_node(int content)
 	return (node);
 }
 
-void	print_list_index(lnk_list *stack)
+void	print_list_index(t_list *stack)
 {
 	while (stack->next != NULL)
 	{
@@ -41,9 +41,9 @@ void	print_list_index(lnk_list *stack)
 	printf("%i\n", stack->data);
 }
 
-lnk_list	*get_last_node(lnk_list **stack)
+t_list	*get_last_node(t_list **stack)
 {
-	lnk_list	*iterator;
+	t_list	*iterator;
 
 	iterator = *stack;
 	while (stack && iterator->next)
@@ -53,9 +53,9 @@ lnk_list	*get_last_node(lnk_list **stack)
 	return (iterator);
 }
 
-void	free_stack(lnk_list **stack)
+void	free_stack(t_list **stack)
 {
-	lnk_list	*tmp;
+	t_list	*tmp;
 
 	if (!stack || !(*stack))
 		return ;

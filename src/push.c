@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:09 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 20:29:52 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:04:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ PB*/
 
 #include "push_swap.h"
 
-void	push_element(lnk_list **stacka, lnk_list **stackb)
+void	push_element(t_list **stacka, t_list **stackb)
 {
-	lnk_list	*tmp;
+	t_list	*tmp;
 
 	if (*stacka == NULL)
 		return ;
@@ -29,13 +29,13 @@ void	push_element(lnk_list **stacka, lnk_list **stackb)
 	*stackb = tmp;
 }
 
-void	ft_pa(lnk_list **stacka, lnk_list **stackb)
+void	ft_pa(t_list **stacka, t_list **stackb)
 {
 	push_element(stackb, stacka);
 	ft_printf("pa\n");
 }
 
-void	ft_pb(lnk_list **stacka, lnk_list **stackb)
+void	ft_pb(t_list **stacka, t_list **stackb)
 {
 	push_element(stacka, stackb);
 	ft_printf("pb\n");

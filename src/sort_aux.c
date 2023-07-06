@@ -6,15 +6,15 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 17:15:24 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 20:44:58 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:04:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-lnk_list	*find_biggest(lnk_list *stack)
+t_list	*find_biggest(t_list *stack)
 {
-	lnk_list	*biggest;
+	t_list	*biggest;
 
 	if (!stack)
 		return (NULL);
@@ -28,10 +28,10 @@ lnk_list	*find_biggest(lnk_list *stack)
 	return (biggest);
 }
 
-lnk_list	*find_second_biggest(lnk_list *stack)
+t_list	*find_second_biggest(t_list *stack)
 {
-	lnk_list	*biggest;
-	lnk_list	*second_biggest;
+	t_list	*biggest;
+	t_list	*second_biggest;
 
 	if (!stack || !stack->next)
 		return (NULL);
@@ -54,9 +54,9 @@ lnk_list	*find_second_biggest(lnk_list *stack)
 	return (second_biggest);
 }
 
-int	is_sorted(lnk_list *stack)
+int	is_sorted(t_list *stack)
 {
-	lnk_list	*current;
+	t_list	*current;
 
 	if (stack == NULL || stack->next == NULL)
 	{
@@ -74,9 +74,9 @@ int	is_sorted(lnk_list *stack)
 	return (1);
 }
 
-lnk_list	*find_smallest(lnk_list *stack)
+t_list	*find_smallest(t_list *stack)
 {
-	lnk_list	*smallest;
+	t_list	*smallest;
 
 	smallest = stack;
 	if (!stack)

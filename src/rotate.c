@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:18 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 13:46:48 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:04:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ RB
 RRR
 */
 
-void	rotate_elements(lnk_list **stack)
+void	rotate_elements(t_list **stack)
 {
-	lnk_list	*iterator;
+	t_list	*iterator;
 
 	if (!stack)
 		return ;
@@ -37,19 +37,19 @@ void	rotate_elements(lnk_list **stack)
 	iterator->next->next = NULL;
 }
 
-void	ft_ra(lnk_list **stackA)
+void	ft_ra(t_list **stackA)
 {
 	rotate_elements(stackA);
 	ft_printf("ra\n");
 }
 
-void	ft_rb(lnk_list **stackB)
+void	ft_rb(t_list **stackB)
 {
 	rotate_elements(stackB);
 	ft_printf("rb\n");
 }
 
-void	ft_rr(lnk_list **stackA, lnk_list **stackB)
+void	ft_rr(t_list **stackA, t_list **stackB)
 {
 	rotate_elements(stackA);
 	rotate_elements(stackB);

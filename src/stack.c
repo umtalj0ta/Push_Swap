@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:32 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 13:47:02 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:04:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 #include "push_swap.h"
 
 // asigns index to each
-void	assign_index(lnk_list *stacka, int stack_size)
+void	assign_index(t_list *stacka, int stack_size)
 {
-	lnk_list	*ptr;
-	lnk_list	*highest;
-	int			value;
+	t_list	*ptr;
+	t_list	*highest;
+	int		value;
 
 	while (--stack_size > 0)
 	{
@@ -45,9 +45,9 @@ void	assign_index(lnk_list *stacka, int stack_size)
 	}
 }
 
-void	add_to_stack(lnk_list **stack, lnk_list *new_node)
+void	add_to_stack(t_list **stack, t_list *new_node)
 {
-	lnk_list	*iterator;
+	t_list	*iterator;
 
 	if (!stack)
 		return ;
@@ -66,7 +66,7 @@ void	add_to_stack(lnk_list **stack, lnk_list *new_node)
 	}
 }
 
-int	get_stack_size(lnk_list *stack)
+int	get_stack_size(t_list *stack)
 {
 	int	size;
 

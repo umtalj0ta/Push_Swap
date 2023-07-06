@@ -6,7 +6,7 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:15 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 13:46:43 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:04:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ RRR
 */
 #include "push_swap.h"
 
-void	reverse_rotate(lnk_list **stack)
+void	reverse_rotate(t_list **stack)
 {
-	lnk_list	*last;
-	lnk_list	*first;
+	t_list	*last;
+	t_list	*first;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
@@ -36,19 +36,19 @@ void	reverse_rotate(lnk_list **stack)
 	*stack = last;
 }
 
-void	ft_rra(lnk_list **stacka)
+void	ft_rra(t_list **stacka)
 {
 	reverse_rotate(stacka);
 	ft_printf("rra\n");
 }
 
-void	ft_rrb(lnk_list **stackb)
+void	ft_rrb(t_list **stackb)
 {
 	reverse_rotate(stackb);
 	ft_printf("rrb\n");
 }
 
-void	ft_rrr(lnk_list **stacka, lnk_list **stackb)
+void	ft_rrr(t_list **stacka, t_list **stackb)
 {
 	reverse_rotate(stacka);
 	reverse_rotate(stackb);

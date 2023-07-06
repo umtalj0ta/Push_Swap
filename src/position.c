@@ -6,16 +6,16 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:45:03 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 20:38:00 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:04:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	get_position(lnk_list **stack)
+void	get_position(t_list **stack)
 {
-	lnk_list	*tmp;
-	int			i;
+	t_list	*tmp;
+	int		i;
 
 	tmp = *stack;
 	i = 0;
@@ -28,11 +28,11 @@ void	get_position(lnk_list **stack)
 }
 
 // retorna a posicao do menor index na stack
-int	get_lowest_index_position(lnk_list **stack)
+int	get_lowest_index_position(t_list **stack)
 {
-	lnk_list	*tmp;
-	int			lowest_index;
-	int			lowest_pos;
+	t_list	*tmp;
+	int		lowest_index;
+	int		lowest_pos;
 
 	tmp = *stack;
 	lowest_index = INT_MAX;
@@ -50,9 +50,9 @@ int	get_lowest_index_position(lnk_list **stack)
 	return (lowest_pos);
 }
 
-int	get_target(lnk_list **a, int b_idx, int target_idx, int target_pos)
+int	get_target(t_list **a, int b_idx, int target_idx, int target_pos)
 {
-	lnk_list	*tmp_a;
+	t_list	*tmp_a;
 
 	tmp_a = *a;
 	while (tmp_a)
@@ -79,10 +79,10 @@ int	get_target(lnk_list **a, int b_idx, int target_idx, int target_pos)
 	return (target_pos);
 }
 
-void	get_target_position(lnk_list **a, lnk_list **b)
+void	get_target_position(t_list **a, t_list **b)
 {
-	lnk_list	*tmp_b;
-	int			target_pos;
+	t_list	*tmp_b;
+	int		target_pos;
 
 	tmp_b = *b;
 	get_position(a);

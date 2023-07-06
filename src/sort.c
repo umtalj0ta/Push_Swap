@@ -6,15 +6,15 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 15:00:39 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 20:30:33 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:04:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	*sort_three(lnk_list **stack)
+void	*sort_three(t_list **stack)
 {
-	lnk_list	*biggest;
+	t_list	*biggest;
 
 	if (is_sorted(*stack) == 1)
 		return (*stack);
@@ -28,7 +28,7 @@ void	*sort_three(lnk_list **stack)
 	return (*stack);
 }
 
-void	push_all_save_two(lnk_list **stack_a, lnk_list **stack_b)
+void	push_all_save_two(t_list **stack_a, t_list **stack_b)
 {
 	int	stack_size;
 	int	pushed;
@@ -55,7 +55,7 @@ void	push_all_save_two(lnk_list **stack_a, lnk_list **stack_b)
 	}
 }
 
-void	reorder_based_on_lowest(lnk_list **stack_a)
+void	reorder_based_on_lowest(t_list **stack_a)
 {
 	int	lowest_pos;
 	int	stack_size;
@@ -80,7 +80,7 @@ void	reorder_based_on_lowest(lnk_list **stack_a)
 	}
 }
 
-void	sort(lnk_list **stack_a, lnk_list **stack_b)
+void	sort(t_list **stack_a, t_list **stack_b)
 {
 	push_all_save_two(stack_a, stack_b);
 	while (*stack_b)

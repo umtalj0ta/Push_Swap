@@ -6,13 +6,13 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 16:44:48 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 20:47:48 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:04:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	do_rev_rotate_both(lnk_list **a, lnk_list **b, int *cost_a, int *cost_b)
+void	do_rev_rotate_both(t_list **a, t_list **b, int *cost_a, int *cost_b)
 {
 	while (*cost_a < 0 && *cost_b < 0)
 	{
@@ -24,7 +24,7 @@ void	do_rev_rotate_both(lnk_list **a, lnk_list **b, int *cost_a, int *cost_b)
 
 /* ft_rotate_both:
  */
-void	do_rotate_both(lnk_list **a, lnk_list **b, int *cost_a, int *cost_b)
+void	do_rotate_both(t_list **a, t_list **b, int *cost_a, int *cost_b)
 {
 	while (*cost_a > 0 && *cost_b > 0)
 	{
@@ -37,7 +37,7 @@ void	do_rotate_both(lnk_list **a, lnk_list **b, int *cost_a, int *cost_b)
 /* do_rotate_a:
  *
  */
-void	do_rotate_a(lnk_list **a, int *cost)
+void	do_rotate_a(t_list **a, int *cost)
 {
 	if (*cost > 0)
 	{
@@ -60,7 +60,7 @@ void	do_rotate_a(lnk_list **a, int *cost)
 /* ft_rotate_b:
  *
  */
-void	do_rotate_b(lnk_list **b, int *cost)
+void	do_rotate_b(t_list **b, int *cost)
 {
 	if (*cost > 0)
 	{
@@ -80,7 +80,7 @@ void	do_rotate_b(lnk_list **b, int *cost)
 	}
 }
 
-void	do_move(lnk_list **a, lnk_list **b, int cost_a, int cost_b)
+void	do_move(t_list **a, t_list **b, int cost_a, int cost_b)
 {
 	if (cost_a < 0 && cost_b < 0)
 		do_rev_rotate_both(a, b, &cost_a, &cost_b);

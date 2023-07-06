@@ -6,18 +6,18 @@
 /*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:24:53 by jgomes-v          #+#    #+#             */
-/*   Updated: 2023/07/05 20:47:18 by jgomes-v         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:04:52 by jgomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-lnk_list	*swap_init(int argc, char *argv[])
+t_list	*swap_init(int argc, char *argv[])
 {
-	lnk_list	*stack_a;
-	int			conversion;
-	int			i;
-	lnk_list	*new_node;
+	t_list	*stack_a;
+	int		conversion;
+	int		i;
+	t_list	*new_node;
 
 	stack_a = NULL;
 	if (argc >= 2)
@@ -34,7 +34,7 @@ lnk_list	*swap_init(int argc, char *argv[])
 	return (stack_a);
 }
 
-static void	push_swap(lnk_list **stack_a, lnk_list **stack_b, int stack_size)
+static void	push_swap(t_list **stack_a, t_list **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !is_sorted(*stack_a))
 		ft_sa(stack_a);
@@ -46,9 +46,9 @@ static void	push_swap(lnk_list **stack_a, lnk_list **stack_b, int stack_size)
 
 int	main(int argc, char *argv[])
 {
-	int			stack_size;
-	lnk_list	*stack_a;
-	lnk_list	*stack_b;
+	int		stack_size;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
 	if (argc < 2)
 		return (0);
